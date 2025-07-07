@@ -41,7 +41,7 @@ This application demonstrates a basic yet functional e-commerce flow, from brows
    - Success message and checkmark icon
    - Button to return to Home screen
 
-### 🧪 Additional Screens (Bonus):
+### 🧪 Additional Static Screens (Bonus):
 
 - **Profile Screen**
 - **Wishlist Screen**
@@ -56,7 +56,7 @@ These were added to simulate a more complete app experience.
 - **State Management**:Used `useState`, `useEffect` and context-based cart logic to manage product and cart state.
 - **Animation**:Used **React Native Reanimated** and **React Native's built-in Animated API** to demonstrate knowledge of both libraries for UI transitions and effects.
 - **Navigation**:React Navigation for stack and tab navigators.
-- **Mock Data**:All product data, banners, and user information is mocked locally (due to lack of static APIs). Simulated API-like behavior with `Promise` and artificial delays for loading states.
+- **Mock Data**:All product data, banners, and user information is mocked locally (due to lack of static APIs).
 - **Styling**:Clean, minimal, mobile-friendly UI using StyleSheet and conditional styling based on state.
 - **Development Platform**:
   Built using **Expo** for faster prototyping and ease of testing.
