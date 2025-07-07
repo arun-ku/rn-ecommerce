@@ -67,9 +67,7 @@ These were added to simulate a more complete app experience.
 
 - ✅ Unit tests using Jest and React Native Testing Library
 - ✅ Responsive image loading with placeholders
-- ✅ Better state management using Redux Toolkit or Zustand
 - ✅ Persisting cart data using AsyncStorage
-- ✅ Add animation to cart interactions (drag to delete, etc.)
 - ✅ Integration of deep links for product sharing
 
 ---
