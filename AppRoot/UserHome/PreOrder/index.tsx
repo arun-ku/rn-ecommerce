@@ -1,6 +1,8 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./Home";
 import ProductDescription from "./ProductDescription";
+import Search from "./Search";
+import CategoryListing from "./CategoryListing";
 
 const Stack = createStackNavigator();
 
@@ -15,6 +17,16 @@ const PreOrder = () => {
         options={{
           presentation: "card",
         }}
+      />
+      <Stack.Screen
+        name="Search"
+        component={Search}
+        initialParams={{ searchText: "" }}
+      />
+      <Stack.Screen
+        name="CategoryListing"
+        component={CategoryListing}
+        initialParams={{ categoryId: "" }}
       />
     </Stack.Navigator>
   );

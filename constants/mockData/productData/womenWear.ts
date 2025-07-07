@@ -39,7 +39,7 @@ const womenWear = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -138,7 +138,7 @@ const womenWear = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -299,7 +299,7 @@ const womenWear = [
       },
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -391,7 +391,7 @@ const womenWear = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",

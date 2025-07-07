@@ -32,7 +32,7 @@ const Address = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#ffffff",
-    padding: 18,
+    padding: 20,
     borderRadius: 10,
     marginTop: 16,
     shadowColor: "#000",

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
+  SafeAreaView,
 } from "react-native";
 
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -37,69 +38,71 @@ const ThankYou = () => {
   }, [navigation]);
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.container}>
-        <View style={styles.card}>
-          {/* Success icon */}
-          <View style={styles.iconContainer}>
-            <View style={styles.checkCircle}>
-              <View style={styles.checkmark} />
+    <SafeAreaView>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <View style={styles.container}>
+          <View style={styles.card}>
+            {/* Success icon */}
+            <View style={styles.iconContainer}>
+              <View style={styles.checkCircle}>
+                <View style={styles.checkmark} />
+              </View>
             </View>
+
+            <Text style={styles.title}>Thank You!</Text>
+            <Text style={styles.subtitle}>
+              Your order has been placed successfully
+            </Text>
+
+            <View style={styles.orderInfoCard}>
+              <Text style={styles.orderInfoTitle}>Order Details</Text>
+              <View style={styles.orderInfoRow}>
+                <Text style={styles.orderInfoLabel}>Order Number:</Text>
+                <Text style={styles.orderInfoValue}>{orderNumber}</Text>
+              </View>
+              <View style={styles.orderInfoRow}>
+                <Text style={styles.orderInfoLabel}>Date:</Text>
+                <Text style={styles.orderInfoValue}>{orderDate}</Text>
+              </View>
+              <View style={styles.orderInfoRow}>
+                <Text style={styles.orderInfoLabel}>Payment Method:</Text>
+                <Text style={styles.orderInfoValue}>Cash On Delivery</Text>
+              </View>
+            </View>
+
+            {/* New Address Section */}
+            <View style={styles.orderInfoCard}>
+              <Text style={styles.orderInfoTitle}>Delivery Address</Text>
+              <View style={styles.addressContainer}>
+                <Text style={styles.addressName}>{userAddress.name}</Text>
+                <Text style={styles.addressText}>{userAddress.street}</Text>
+                <Text style={styles.addressText}>
+                  {userAddress.city}, {userAddress.state} {userAddress.zipCode}
+                </Text>
+                <Text style={styles.addressText}>{userAddress.country}</Text>
+                <Text style={styles.addressText}>{userAddress.phone}</Text>
+              </View>
+            </View>
+
+            <Text style={styles.message}>
+              We've sent a confirmation email with your order details. You can
+              track your order in the "My Orders" section.
+            </Text>
+
+            <TouchableOpacity style={styles.primaryButton}>
+              <Text style={styles.primaryButtonText}>Track My Order</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={handleHomeNavigation}
+              style={styles.secondaryButton}
+            >
+              <Text style={styles.secondaryButtonText}>Continue Shopping</Text>
+            </TouchableOpacity>
           </View>
-
-          <Text style={styles.title}>Thank You!</Text>
-          <Text style={styles.subtitle}>
-            Your order has been placed successfully
-          </Text>
-
-          <View style={styles.orderInfoCard}>
-            <Text style={styles.orderInfoTitle}>Order Details</Text>
-            <View style={styles.orderInfoRow}>
-              <Text style={styles.orderInfoLabel}>Order Number:</Text>
-              <Text style={styles.orderInfoValue}>{orderNumber}</Text>
-            </View>
-            <View style={styles.orderInfoRow}>
-              <Text style={styles.orderInfoLabel}>Date:</Text>
-              <Text style={styles.orderInfoValue}>{orderDate}</Text>
-            </View>
-            <View style={styles.orderInfoRow}>
-              <Text style={styles.orderInfoLabel}>Payment Method:</Text>
-              <Text style={styles.orderInfoValue}>Cash On Delivery</Text>
-            </View>
-          </View>
-
-          {/* New Address Section */}
-          <View style={styles.orderInfoCard}>
-            <Text style={styles.orderInfoTitle}>Delivery Address</Text>
-            <View style={styles.addressContainer}>
-              <Text style={styles.addressName}>{userAddress.name}</Text>
-              <Text style={styles.addressText}>{userAddress.street}</Text>
-              <Text style={styles.addressText}>
-                {userAddress.city}, {userAddress.state} {userAddress.zipCode}
-              </Text>
-              <Text style={styles.addressText}>{userAddress.country}</Text>
-              <Text style={styles.addressText}>{userAddress.phone}</Text>
-            </View>
-          </View>
-
-          <Text style={styles.message}>
-            We've sent a confirmation email with your order details. You can
-            track your order in the "My Orders" section.
-          </Text>
-
-          <TouchableOpacity style={styles.primaryButton}>
-            <Text style={styles.primaryButtonText}>Track My Order</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            onPress={handleHomeNavigation}
-            style={styles.secondaryButton}
-          >
-            <Text style={styles.secondaryButtonText}>Continue Shopping</Text>
-          </TouchableOpacity>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

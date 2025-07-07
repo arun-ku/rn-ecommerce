@@ -1,11 +1,11 @@
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { selectProductById } from "../../../../../../redux/slices/productSlice";
-import { RootState } from "../../../../../../redux/store";
+import { selectProductById } from "../../../redux/slices/productSlice";
+import { RootState } from "../../../redux/store";
 import { useSelector } from "react-redux";
 import Animated, { FadeInDown, Easing } from "react-native-reanimated";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { Product } from "../../../../../../models/product/product";
+import { FontAwesome } from "@expo/vector-icons";
 
 type RootStackParamList = {
   ProductDescription: { productId: string };
@@ -47,12 +47,51 @@ const ProductCard = ({ productId, index }: ProductCardProps) => {
           .easing(Easing.inOut(Easing.ease))}
       >
         <View style={styles.card}>
-          <Animated.Image
-            sharedTransitionTag={`image_${product.productId}`}
-            resizeMode="cover"
-            source={{ uri: product.images[0] }}
-            style={styles.image}
-          />
+          <View style={styles.imageContainer}>
+            <Animated.Image
+              resizeMode="cover"
+              source={{ uri: product.images[0] }}
+              style={styles.image}
+            />
+            {product.tags && product.tags.length > 0 && (
+              <View style={styles.tagsContainer}>
+                {product.tags.map((tag, tagIndex) => (
+                  <View
+                    key={tagIndex}
+                    style={[
+                      styles.tag,
+                      { backgroundColor: tag.bgColor || "#f0f0f0" },
+                    ]}
+                  >
+                    {tag.prefixIcon && (
+                      <FontAwesome
+                        name={tag.prefixIcon as any}
+                        size={8}
+                        color={tag.prefixIconColor || "#000"}
+                        style={styles.tagIcon}
+                      />
+                    )}
+                    <Text
+                      style={[
+                        styles.tagLabel,
+                        { color: tag.textColor || "#000" },
+                      ]}
+                    >
+                      {tag.label}
+                    </Text>
+                    {tag.postfixIcon && (
+                      <FontAwesome
+                        name={tag.postfixIcon as any}
+                        size={8}
+                        color={tag.postFixIconColor || "#000"}
+                        style={styles.tagIcon}
+                      />
+                    )}
+                  </View>
+                ))}
+              </View>
+            )}
+          </View>
           <View style={styles.details}>
             <Text style={styles.name} numberOfLines={2} ellipsizeMode="tail">
               {product.name}
@@ -163,6 +202,39 @@ const styles = StyleSheet.create({
     fontSize: 8,
     color: "#000",
     fontWeight: "700",
+  },
+  imageContainer: {
+    position: "relative",
+  },
+  tagsContainer: {
+    position: "absolute",
+    top: 8,
+    left: 8,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    maxWidth: "90%",
+  },
+  tag: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 6,
+    paddingVertical: 3,
+    borderRadius: 4,
+    marginRight: 4,
+    marginBottom: 4,
+    elevation: 2,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 1.41,
+  },
+  tagIcon: {
+    fontSize: 10,
+    marginHorizontal: 2,
+  },
+  tagLabel: {
+    fontSize: 10,
+    fontWeight: "600",
   },
 });
 

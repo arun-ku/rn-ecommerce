@@ -91,5 +91,9 @@ export const selectProductsByCategory = (
   state: RootState,
   categoryId: string
 ) => state.product.productsByCategory[categoryId];
+export const selectAllProductsById = (state: RootState) =>
+  state.product.productsById;
+export const selectAllProducts = (state: RootState) =>
+  state.product.allProducts.map((id) => state.product.productsById[id]);
 
 export default productSlice.reducer;

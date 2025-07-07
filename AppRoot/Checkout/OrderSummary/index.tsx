@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 4,
     marginVertical: 16,
-    marginHorizontal: 12,
   },
   header: {
     fontSize: 20,

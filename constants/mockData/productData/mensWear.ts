@@ -48,7 +48,7 @@ const mensWear = [
       },
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -87,7 +87,7 @@ const mensWear = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -284,7 +284,7 @@ const mensWear = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -340,7 +340,7 @@ const mensWear = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -389,7 +389,7 @@ const mensWear = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",

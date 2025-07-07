@@ -237,7 +237,7 @@ const sneakers = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -339,7 +339,7 @@ const sneakers = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -392,7 +392,7 @@ const sneakers = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",

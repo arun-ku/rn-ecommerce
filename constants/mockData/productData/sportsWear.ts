@@ -91,7 +91,7 @@ const sportsWear = [
       },
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -143,7 +143,7 @@ const sportsWear = [
       },
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -191,7 +191,7 @@ const sportsWear = [
       },
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -240,7 +240,7 @@ const sportsWear = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -337,7 +337,7 @@ const sportsWear = [
       },
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
@@ -381,7 +381,7 @@ const sportsWear = [
     tags: [
       {
         prefixIcon: "bolt",
-        postfixIcon: "smile",
+        postfixIcon: "",
         prefixIconColor: "#ffd700",
         postFixIconColor: "#28a745",
         label: "Viral",
