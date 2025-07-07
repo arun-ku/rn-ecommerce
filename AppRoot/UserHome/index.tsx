@@ -11,6 +11,7 @@ import {
 import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
 import Cart from "./Cart";
 import Profile from "./Profile";
+import Wishlist from "./Wishlist";
 
 const Tab = createBottomTabNavigator();
 
@@ -54,7 +55,7 @@ const UserHome = () => {
       />
       <Tab.Screen
         name="Wishlist"
-        component={View}
+        component={Wishlist}
         options={{
           tabBarButton: WishlistTabButton,
         }}

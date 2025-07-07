@@ -31,11 +31,12 @@ import { StackNavigationProp } from "@react-navigation/stack";
 type RootStackParamList = {
   ProductDescription: { productId: string };
   Search: { searchText: string };
+  Notifications: undefined;
 };
 
 type NavigationProp = StackNavigationProp<
   RootStackParamList,
-  "ProductDescription" | "Search"
+  "ProductDescription" | "Search" | "Notifications"
 >;
 
 const Home = () => {
@@ -161,7 +162,7 @@ const Home = () => {
             </View>
             <View style={styles.notificationIconContainer}>
               <TouchableOpacity
-                onPress={() => alert("Notification clicked!")}
+                onPress={() => navigation.navigate("Notifications")}
                 style={styles.notificationButton}
               >
                 <FontAwesome name="bell-o" size={20} color="#888" />
