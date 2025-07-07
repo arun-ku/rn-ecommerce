@@ -31,7 +31,7 @@ const Search = () => {
     <View style={styles.container}>
       <View>
         <SafeAreaView>
-          <View style={{ flexDirection: "row" }}>
+          <View style={styles.rowContainer}>
             <Text style={styles.resultsHeader}>
               Search results for "{searchText}" ({filteredProducts.length})
             </Text>
@@ -65,6 +65,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     paddingHorizontal: 16,
+  },
+  rowContainer: {
+    flexDirection: "row",
   },
   resultsHeader: {
     fontSize: 16,

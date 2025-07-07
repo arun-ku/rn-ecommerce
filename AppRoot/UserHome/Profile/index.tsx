@@ -23,7 +23,7 @@ const Profile = () => {
     <ScrollView style={styles.container}>
       {/* Header with user info */}
       <View style={styles.header}>
-        <SafeAreaView style={{ flexDirection: "row", alignItems: "center" }}>
+        <SafeAreaView style={styles.safeAreaContainer}>
           <Image source={{ uri: user.avatar }} style={styles.avatar} />
           <View style={styles.userInfo}>
             <Text style={styles.userName}>{user.name}</Text>
@@ -101,6 +101,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomWidth: 1,
     borderBottomColor: "#eee",
+  },
+  safeAreaContainer: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   avatar: {
     width: 80,

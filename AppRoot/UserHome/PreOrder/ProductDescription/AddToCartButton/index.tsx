@@ -72,22 +72,8 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({
           </SafeAreaView>
         </TouchableOpacity>
         <View style={styles.quantityContainer}>
-          <SafeAreaView
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "100%",
-            }}
-          >
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                padding: 8,
-                paddingBottom: 0,
-              }}
-            >
+          <SafeAreaView style={styles.safeAreaCartContainer}>
+            <View style={styles.quantityButtonsContainer}>
               <TouchableOpacity
                 style={styles.quantityButton}
                 onPress={handleDecrease}
@@ -115,9 +101,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({
   return (
     <TouchableOpacity style={styles.addToCartButton} onPress={handleAddToCart}>
       <SafeAreaView>
-        <View
-          style={{ flexDirection: "row", alignItems: "center", padding: 4 }}
-        >
+        <View style={styles.addToCartContainer}>
           <Text style={styles.addToCartText}>Add to Cart</Text>
         </View>
       </SafeAreaView>
@@ -138,6 +122,11 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     fontSize: 16,
     letterSpacing: 0.5,
+  },
+  addToCartContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 4,
   },
   cartRow: {
     flexDirection: "row",
@@ -166,6 +155,18 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 4,
     borderLeftWidth: 1,
     borderLeftColor: "#E0E0E0",
+  },
+  safeAreaCartContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+  },
+  quantityButtonsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 8,
+    paddingBottom: 0,
   },
   quantityButton: {
     width: 36,

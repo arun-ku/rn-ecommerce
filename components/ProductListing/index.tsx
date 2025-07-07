@@ -53,28 +53,13 @@ const ProductListing: FC<ProductListingProps> = ({
   return (
     <View style={!limit ? styles.containerWithOutLimit : styles.container}>
       {showHeader && (
-        <View
-          style={{
-            width: "100%",
-            marginBottom: 20,
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <Text style={{ fontSize: 24, fontWeight: "700", marginBottom: 10 }}>
-            Featured Products
-          </Text>
+        <View style={styles.headerContainer}>
+          <Text style={styles.headerText}>Featured Products</Text>
           <TouchableOpacity
             onPress={handleSeeAllPress}
-            style={{
-              justifyContent: "center",
-              alignItems: "flex-end",
-            }}
+            style={styles.seeAllButton}
           >
-            <Text style={{ color: "#888", fontSize: 16, fontWeight: "600" }}>
-              See All
-            </Text>
+            <Text style={styles.seeAllText}>See All</Text>
           </TouchableOpacity>
         </View>
       )}
@@ -90,7 +75,7 @@ const ProductListing: FC<ProductListingProps> = ({
           )}
           keyExtractor={(item) => item}
           numColumns={2}
-          contentContainerStyle={{ paddingBottom: 20 }}
+          contentContainerStyle={styles.flatListContent}
         />
       )}
     </View>
@@ -112,6 +97,30 @@ const styles = StyleSheet.create({
     padding: 20,
     flexDirection: "column",
     alignItems: "flex-start",
+  },
+  headerContainer: {
+    width: "100%",
+    marginBottom: 20,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  headerText: {
+    fontSize: 24,
+    fontWeight: "700",
+    marginBottom: 10,
+  },
+  seeAllButton: {
+    justifyContent: "center",
+    alignItems: "flex-end",
+  },
+  seeAllText: {
+    color: "#888",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  flatListContent: {
+    paddingBottom: 20,
   },
 });
 

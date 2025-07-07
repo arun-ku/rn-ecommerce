@@ -1,4 +1,10 @@
-import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
+import {
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  View,
+  StyleSheet,
+} from "react-native";
 import ProductListing from "../../../../components/ProductListing";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { useSelector } from "react-redux";
@@ -27,17 +33,17 @@ const CategoryListing = () => {
   }, [navigation]);
 
   return (
-    <View style={{ flex: 1 }}>
-      <View style={{ padding: 20, backgroundColor: "#3498db" }}>
+    <View style={styles.container}>
+      <View style={styles.header}>
         <SafeAreaView>
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <View style={styles.headerRow}>
             <TouchableOpacity
               onPress={handleBackPress}
-              style={{ marginRight: 10 }}
+              style={styles.backButton}
             >
               <FontAwesome name="arrow-left" size={24} color="#fff" />
             </TouchableOpacity>
-            <Text style={{ color: "#fff", fontSize: 24, fontWeight: "bold" }}>
+            <Text style={styles.headerTitle}>
               {categoryName} ({products.length})
             </Text>
           </View>
@@ -47,5 +53,27 @@ const CategoryListing = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  header: {
+    padding: 20,
+    backgroundColor: "#3498db",
+  },
+  headerRow: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  backButton: {
+    marginRight: 10,
+  },
+  headerTitle: {
+    color: "#fff",
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+});
 
 export default CategoryListing;
