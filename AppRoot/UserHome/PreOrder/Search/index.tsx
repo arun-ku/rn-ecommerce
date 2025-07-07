@@ -1,6 +1,13 @@
-import { useMemo } from "react";
-import { useRoute } from "@react-navigation/native";
-import { View, Text, FlatList, StyleSheet, SafeAreaView } from "react-native";
+import { useCallback, useMemo } from "react";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
 import { useSelector } from "react-redux";
 import { FontAwesome } from "@expo/vector-icons";
 import { RootState } from "../../../../redux/store";
@@ -10,6 +17,7 @@ import ProductItem from "./ProductItem";
 
 const Search = () => {
   const route = useRoute();
+  const navigation = useNavigation();
   const { searchText } = route.params as { searchText: string };
   const allProductsById = useSelector((state: RootState) =>
     selectAllProductsById(state)
@@ -27,11 +35,22 @@ const Search = () => {
     <ProductItem item={item} />
   );
 
+  const handleBackPress = useCallback(() => {
+    // Navigate back to the previous screen
+    navigation.goBack();
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
       <View>
         <SafeAreaView>
           <View style={styles.rowContainer}>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={handleBackPress}
+            >
+              <FontAwesome name="arrow-left" size={24} color="#000" />
+            </TouchableOpacity>
             <Text style={styles.resultsHeader}>
               Search results for "{searchText}" ({filteredProducts.length})
             </Text>
@@ -68,11 +87,15 @@ const styles = StyleSheet.create({
   },
   rowContainer: {
     flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: 16,
+  },
+  backButton: {
+    marginRight: 8,
   },
   resultsHeader: {
     fontSize: 16,
     fontWeight: "600",
-    marginBottom: 16,
     color: "#333",
   },
   listContainer: {},
